@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accounts</title>
+
+</head>
+<h1>TRANSACTIONS</h1>
+<body>
+
+    <a href="{% url 'account' %}">Account</a>
+    <a href="{% url 'branch' %}">branch</a>
+    <a href="{% url 'home' %}">home page</a>
+    <a href="{% url 'acc_type' %}">Account types</a>
+    
+
+    <form>
+        <label for="id">Transaction id</label>
+        <input type="text" id ="Transaction id" name = ""><br><P>
+        <label for="num">Transaction Number</label>
+        <input type="text" num ="Transaction Number" name = "Transaction Number"><br><P>
+        <label for="date">Transaction Date</label>
+        <input type="text" date ="Transaction Date" name = "Transaction Date"><br><P>
+        <label for="Type">Transaction Type</label>
+        <input type="text" Type ="Transaction Type" name = "Transaction Type"><br><P>
+        <label for="id">Account id</label>
+        <input type="text" id ="Account id" name = "Account id"><br><P>
+        <label for="medium">Transaction Medium</label>
+        <input type="text" medium ="Transaction medium" name = "Transaction medium"><br><P>
+            <button>submit</button>
+        
+        
+    </form>
+    
+    
+</body>
+</html>

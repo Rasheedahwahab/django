@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>types</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+    <a href="{% url 'account' %}">Account</a>
+    <a href="{% url 'branch' %}">branch</a>
+    <a href="{% url 'transaction' %}">transaction</a>
+    <a href="{% url 'home' %}">home page</a>
+    
+
+
+    <form>
+        <label for="id ">Account type id</label>
+        <input type="text" id ="Account Type id" name = "Account Type id"><br><p>
+        <label for="name">Account Type Name</label>
+        <input type="text" name ="Account Type Name" name = "Account Type Name"><br><p>
+        <label for="description">description</label>
+        <input type="text" description ="description" name = "description"><br><p>
+        <button>submit</button>
+    </form>
+
+
+
+    
+    
+</body>
+</html>

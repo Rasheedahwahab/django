@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>branches</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<h1>BRANCHES OF ISLAMIC BANKING</h1>
+<body>
+    
+    <a href="{% url 'account' %}">Account</a>
+    <a href="{% url 'home' %}">home page</a>
+    <a href="{% url 'transaction' %}">transaction</a>
+    <a href="{% url 'acc_type' %}">Account types</a>
+    
+
+
+    <form>
+        <label for="id ">Branch id</label>
+        <input type="text" id ="branch_id" name = "Branch id" onkeyup="checkValue()"><br><p> 
+        <label for="name">Branch Name</label>
+        <input type="text" id ="branch_name" name = "Branch Name" onkeyup="checkValue()"><br><p>
+        <label for="LOCATION">Location</label>
+        <input type="text" id ="location" name = "Location" onkeyup="checkValue()"><br><p>
+        <label for="MANAGER">Manager</label>
+        <input type="text" id ="manager" name = "Manager" onkeyup="checkValue()"><br><p>
+        <button disabled = "true">submit</button>
+        
+        
+    </form>
+
+
+    
+</body>
+</html>

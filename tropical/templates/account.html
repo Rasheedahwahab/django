@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accounts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<h1>ACCOUNTS FORM</h1>
+<body>
+
+
+    <a href="{% url 'home' %}">home page</a>
+    <a href="{% url 'branch' %}">branch</a>
+    <a href="{% url 'transaction' %}">transaction</a>
+    <a href="{% url 'acc_type' %}">Account types</a>
+    
+
+
+    <form>
+        <label for="id">Account id</label>
+        <input type="text" id ="Account id" name = "Account id"><br><p>
+        <label for="acc no">Account Number</label>
+        <input type="text" acc no ="Account Number" name = "Account Number"><br><p></p>
+        <label for="id">customer Id</label>
+        <input type="text" id ="Customer Id" name = "Customer Id"><br><p></p>
+        <label for="date">Opening Date</label>
+        <input type="text" date ="Opening Date" name = "Opening Date"><br><p></p>
+        <label for="branch">Branch id</label>
+        <input type="text" branch ="Branch id" name = "Account id"><br><p></p>
+        <label for="type">Account Type id</label>
+        <input type="text" type ="Account Type id" name = "Account Type id"><br><p></p>
+        <label for="balance">Account Balance</label>
+        <input type="text" balance ="Account balance" name = "Account balance"><br><p></p>
+        <label for="status">status</label>
+        <input type="text" id ="status" name = "status"><br><p></p>
+        <button>submit</button>
+        
+    </form>
+
+    
+    
+</body>
+</html>
