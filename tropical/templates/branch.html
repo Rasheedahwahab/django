@@ -1,36 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>branches</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<h1>BRANCHES OF ISLAMIC BANKING</h1>
+{% extends './base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
 <body>
-    
-    <a href="{% url 'account' %}">Account</a>
-    <a href="{% url 'home' %}">home page</a>
-    <a href="{% url 'transaction' %}">transaction</a>
-    <a href="{% url 'acc_type' %}">Account types</a>
-    
+    <div class = "container">
+   
+   <!-- Button trigger modal -->
+<button type="button" class="btn bg-gradient-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Add Branch
+</button>
+   <table class="table table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">name</th>
+        <th scope="col">location</th>
+        <th scope="col">manager</th> 
+      </tr>
+    </thead>
+
+    <tbody>
+        {% for branch in branch %}
+        <tr>
+          <td scope="row">{{branch.id}}</td>
+          <td>{{branch.name}}</td>
+          <td>{{branch.manager}}</td>
+          <td>{{branch.location}}</td>
+
+          <td>
+            <a href="{% url 'edit_branch' branch.id %}">
+              <i class="material-icons">edit</i>
+            </a> |
+            <a href="{% url 'delete_add_branch' branch.id %}"
+            onclick = "return confirm('Are sure you want to delete this account?')">
+            <i class="material-icons">delete</i></a>
+          </td>
+        </tr> 
+        {% endfor %}
+
+    </tbody>
+   </table> 
+</div>
 
 
-    <form>
-        <label for="id ">Branch id</label>
-        <input type="text" id ="branch_id" name = "Branch id" onkeyup="checkValue()"><br><p> 
-        <label for="name">Branch Name</label>
-        <input type="text" id ="branch_name" name = "Branch Name" onkeyup="checkValue()"><br><p>
-        <label for="LOCATION">Location</label>
-        <input type="text" id ="location" name = "Location" onkeyup="checkValue()"><br><p>
-        <label for="MANAGER">Manager</label>
-        <input type="text" id ="manager" name = "Manager" onkeyup="checkValue()"><br><p>
-        <button disabled = "true">submit</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title font-weight-normal" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method  = "POST">
+          {%csrf_token%}
+          {{form|crispy}}
+          
         
-        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn bg-gradient-primary">Save changes</button>
+      </div>
     </form>
-
-
-    
-</body>
-</html>
+    </div>
+  </div>
+</div>
+{% endblock content %}

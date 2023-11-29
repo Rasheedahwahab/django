@@ -8,7 +8,7 @@ admin.site.register(Branch, BranchAdmin)
 
 
 class AccountAdmin(admin.ModelAdmin):
-    list_display = ("account_number","opening_date","branch","acc_type","account_balance","status")
+    list_display = ("account_number","opening_date","account_balance","status")
 admin.site.register(Account, AccountAdmin)
 
 class Account_typeAdmin(admin.ModelAdmin):
